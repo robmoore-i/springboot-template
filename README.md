@@ -73,7 +73,7 @@ public class RequestHandler {
 
 ### IntegrationTest.java
 
-Starts and stops the application at the top level (SpringController). Tests endpoints by making HTTP requests using Unirest.
+Starts and stops the application at the top level. Tests endpoints by making HTTP requests using Unirest.
 
 ```
 import com.mashape.unirest.http.HttpResponse;
