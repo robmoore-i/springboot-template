@@ -1,13 +1,9 @@
 # springboot-template
 
-- Main.java contains only the 'public static void main'
-- SpringController.java is the only class refering directly to spring stuff
-- RequestHandler.java is delegated to by the SpringController to respond to requests
-- IntegrationTest.java starts and stops the server using the SpringController, and tests it by sending HTTP requests and asserting on the responses.
-- build.gradle includes the dependencies required for this set up.
-- manifest.yml is the PCF config file
-
-This is shown below.
+- Gradle build file is build.gradle.
+- Source classes are Main, SpringController, RequestHandler.
+- Test class is IntegrationTest.
+- PCF config is manifest.yml.
 
 ### Main.java
 
