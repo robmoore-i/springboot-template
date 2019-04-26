@@ -7,6 +7,8 @@
 
 ### Main.java
 
+Just the psvm.
+
 ```
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +18,8 @@ public class Main {
 ```
 
 ### SpringController.java
+
+Two public static methods: start and stop. Delegates request handling to the RequestHandler, which is independent of Spring.
 
 ```
 import org.springframework.boot.ExitCodeGenerator;
@@ -57,6 +61,8 @@ public class SpringController {
 
 ### RequestHandler.java
 
+Responds to endpoints.
+
 ```
 public class RequestHandler {
     String home() {
@@ -66,6 +72,8 @@ public class RequestHandler {
 ```
 
 ### IntegrationTest.java
+
+Starts and stops the application at the top level (SpringController). Tests endpoints by making HTTP requests using Unirest.
 
 ```
 import com.mashape.unirest.http.HttpResponse;
@@ -109,6 +117,8 @@ public class IntegrationTest {
 
 ### build.gradle
 
+Needs the springboot plugin. Needs the springboot library for source and the unirest library for the integration tests.
+
 ```
 plugins {
     id 'java'
@@ -133,12 +143,14 @@ dependencies {
 
 ### manifest.yml
 
+The manifest for pushing to PCF. The command, when in the top level directory of this repo, is `cf push --hostname springboot-template`.
+
 ```
 ---
 applications:
-- name: web-maths
+- name: springboot-template
   memory: 1G
   random-route: true
-  path: build/libs/web-maths-1.0-SNAPSHOT.jar
+  path: build/libs/springboot-template-1.0-SNAPSHOT.jar
 
 ```
